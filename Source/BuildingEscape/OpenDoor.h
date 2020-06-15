@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -28,6 +26,11 @@ public:
 	void OpenDoor(float DeltaTime);
 	void CloseDoor(float DeltaTime);
 	float TotalMassofActors() const;
+	void FindAudioComponent();
+	void FindPressurePlate();
+
+	bool OpenDoorSound = false;
+	bool CloseDoorSound = true;
 
 private:
 
@@ -57,5 +60,7 @@ ATriggerVolume* PressurePlate;
 UPROPERTY(EditAnywhere)
 AActor* ActorThatOpens;
 
+UPROPERTY()
+UAudioComponent* AudioComponent = nullptr;
 		
 };
